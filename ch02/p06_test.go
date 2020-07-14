@@ -24,6 +24,8 @@ func TestPalindrome(t *testing.T) {
 		{input: []int{0, 1, 2, 7, 1, 0}, want: false},
 		{input: []int{0, 1, 2, 3, 2, 1, 0}, want: true},
 		{input: []int{0, 1, 2, 3, 7, 1, 0}, want: false},
+		{input: []int{0, 1, 2, 3, 2, 7, 0}, want: false},
+		{input: []int{0, 1, 2, 3, 2, 1, 7}, want: false},
 	}
 
 	for _, test := range subtests {
