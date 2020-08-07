@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/alcortesm/ctci-6th/ch01"
+	"github.com/alcortesm/ctci/ch01"
 )
 
 func TestIsStringRotation(t *testing.T) {

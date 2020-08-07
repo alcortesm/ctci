@@ -3,7 +3,7 @@ package ch01_test
 import (
 	"testing"
 
-	"github.com/alcortesm/ctci-6th/ch01"
+	"github.com/alcortesm/ctci/ch01"
 )
 
 func TestIsPalindromePermutation(t *testing.T) {

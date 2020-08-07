@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/alcortesm/ctci-6th/ch02"
+	"github.com/alcortesm/ctci/ch02"
 )
 
 func TestKthToLast(t *testing.T) {

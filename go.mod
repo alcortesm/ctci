@@ -1,4 +1,4 @@
-module github.com/alcortesm/ctci-6th
+module github.com/alcortesm/ctci
 
 go 1.14
 

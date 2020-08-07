@@ -3,7 +3,7 @@ package ch02_test
 import (
 	"testing"
 
-	"github.com/alcortesm/ctci-6th/ch02"
+	"github.com/alcortesm/ctci/ch02"
 )
 
 func TestHasLoop(t *testing.T) {
