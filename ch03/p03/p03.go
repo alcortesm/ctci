@@ -6,23 +6,23 @@ import (
 	"github.com/alcortesm/ctci/ch03"
 )
 
-type StackOfStacks struct {
+type SetOfStacks struct {
 	stacks  []*ch03.Stack
 	maxSize int
 }
 
-func NewStackOfStacks(maxSize int) (*StackOfStacks, error) {
+func NewSetOfStacks(maxSize int) (*SetOfStacks, error) {
 	if maxSize < 1 {
 		return nil, fmt.Errorf("invalid maximum size (%d)", maxSize)
 	}
 
-	return &StackOfStacks{
+	return &SetOfStacks{
 		stacks:  nil,
 		maxSize: maxSize,
 	}, nil
 }
 
-func (s *StackOfStacks) Dump() [][]int {
+func (s *SetOfStacks) Dump() [][]int {
 	result := [][]int{}
 
 	for _, s := range s.stacks {
@@ -34,7 +34,7 @@ func (s *StackOfStacks) Dump() [][]int {
 	return result
 }
 
-func (s *StackOfStacks) Push(v int) {
+func (s *SetOfStacks) Push(v int) {
 	if len(s.stacks) == 0 {
 		s.stacks = []*ch03.Stack{{}}
 	}
@@ -49,7 +49,7 @@ func (s *StackOfStacks) Push(v int) {
 	topStack.Push(v)
 }
 
-func (s *StackOfStacks) Pop() (int, bool) {
+func (s *SetOfStacks) Pop() (int, bool) {
 	if len(s.stacks) == 0 {
 		return 0, false
 	}
@@ -64,7 +64,7 @@ func (s *StackOfStacks) Pop() (int, bool) {
 	return result, true
 }
 
-func (s *StackOfStacks) Peek() (int, bool) {
+func (s *SetOfStacks) Peek() (int, bool) {
 	if len(s.stacks) == 0 {
 		return 0, false
 	}
@@ -73,7 +73,7 @@ func (s *StackOfStacks) Peek() (int, bool) {
 	return topStack.Peek()
 }
 
-func (s *StackOfStacks) Len() int {
+func (s *SetOfStacks) Len() int {
 	result := 0
 
 	for _, s := range s.stacks {

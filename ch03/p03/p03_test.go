@@ -8,8 +8,8 @@ import (
 	"github.com/alcortesm/ctci/ch03/p03"
 )
 
-func TestStackOfStacks(t *testing.T) {
-	s, err := p03.NewStackOfStacks(3)
+func TestSetOfStacks(t *testing.T) {
+	s, err := p03.NewSetOfStacks(3)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -57,7 +57,7 @@ func TestStackOfStacks(t *testing.T) {
 	checkEmpty(t, s)
 }
 
-func checkDump(t *testing.T, s *p03.StackOfStacks, want [][]int) {
+func checkDump(t *testing.T, s *p03.SetOfStacks, want [][]int) {
 	t.Helper()
 
 	got := s.Dump()
@@ -66,7 +66,7 @@ func checkDump(t *testing.T, s *p03.StackOfStacks, want [][]int) {
 	}
 }
 
-func checkPop(t *testing.T, s *p03.StackOfStacks, want int) {
+func checkPop(t *testing.T, s *p03.SetOfStacks, want int) {
 	t.Helper()
 
 	got, ok := s.Pop()
@@ -79,7 +79,7 @@ func checkPop(t *testing.T, s *p03.StackOfStacks, want int) {
 	}
 }
 
-func checkEmpty(t *testing.T, s *p03.StackOfStacks) {
+func checkEmpty(t *testing.T, s *p03.SetOfStacks) {
 	t.Helper()
 
 	if got := s.Len(); 0 != got {
