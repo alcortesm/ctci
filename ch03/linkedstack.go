@@ -23,6 +23,10 @@ func NewLinkedStack(cap int) (*LinkedStack, error) {
 	return &LinkedStack{cap: cap}, nil
 }
 
+func (s *LinkedStack) Len() int {
+	return s.len
+}
+
 func (s *LinkedStack) Dump() []int {
 	result := make([]int, 0, s.len)
 
