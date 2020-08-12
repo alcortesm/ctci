@@ -45,7 +45,13 @@ func (g *DGraph) Dump() map[string][]string {
 	result := make(map[string][]string, len(g.nodes))
 
 	for key, node := range g.nodes {
-		result[key] = node.Children.Keys()
+		children := make([]string, 0, len(node.Children))
+
+		for k, _ := range node.Children {
+			children = append(children, k)
+		}
+
+		result[key] = children
 	}
 
 	return result

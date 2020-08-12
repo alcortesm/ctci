@@ -5,9 +5,19 @@ import (
 	"sort"
 )
 
+// Node represents a node in a graph.
+// It is not zero value safe, use NewNode instead.
 type Node struct {
 	Key      string
 	Children Set
+}
+
+func NewNode(key string, children ...*Node) *Node {
+	result := new(Node)
+	result.Key = key
+	result.Children = NewSet(children...)
+
+	return result
 }
 
 func (n Node) String() string {
@@ -16,8 +26,15 @@ func (n Node) String() string {
 
 type Set map[string]*Node
 
-func (s Set) String() string {
-	return fmt.Sprintf("%s", s.Keys())
+// NewSet creates a new set and Adds the nodes to it.
+func NewSet(nodes ...*Node) Set {
+	result := make(Set)
+
+	for _, n := range nodes {
+		result.Add(n)
+	}
+
+	return result
 }
 
 func (s Set) Has(key string) bool {
@@ -38,8 +55,8 @@ func (s Set) Delete(key string) {
 	delete(s, key)
 }
 
-// Keys returns the keys in the set sorted alphabetically.
-func (s Set) Keys() []string {
+// String returns the keys in the set sorted alphabetically.
+func (s Set) String() string {
 	result := make([]string, 0, len(s))
 
 	for k, _ := range s {
@@ -48,5 +65,5 @@ func (s Set) Keys() []string {
 
 	sort.Strings(result)
 
-	return result
+	return fmt.Sprintf("%s", result)
 }
